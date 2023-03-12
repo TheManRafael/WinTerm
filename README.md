@@ -39,7 +39,7 @@ Please note that you can only run this program if you have python. We are planni
 "cmd" start cmd and execute commands \
 "notepad" starts notepad/file \
 "pprint" makes a decorated print \
-"fprint" print files content \
+"fprint" print files content 
 
 ## Contributing
 
