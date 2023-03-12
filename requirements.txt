@@ -1,2 +1,4 @@
 pyfiglet==0.8.post1
 keyboard==0.13.5
+pyuac==0.0.3
+pypiwin32==223

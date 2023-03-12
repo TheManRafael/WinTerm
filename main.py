@@ -9,6 +9,8 @@ import pyfiglet
 import sys
 import keyboard
 import socket, random, time
+import pyuac
+import ctypes, os
 
 def progressbar(it, prefix="", size=60, out=sys.stdout): # Python3.3+
     count = len(it)
@@ -239,6 +241,20 @@ while True:
                 print("Arguments for cd")
                 print("     [dir] dir to change to")
                 print("\n")
+
+            elif help_to == "sudo":
+                print("sudo help")
+                print("Run commands as administrator")
+                print("Arguments for sudo")
+                print("      --none--")
+                print("\n")
+
+            elif help_to == "whoami":
+                print("whoami help")
+                print("Tells you who is running the program")
+                print("Arguments for whoami")
+                print("      --none--")
+                print("\n")
                 
             else:
                 print("self.tocken Error:")
@@ -268,6 +284,8 @@ while True:
             print('     "notepad" starts notepad/file')
             print('     "pprint" makes a decorated print')
             print('     "fprint" print files content')
+            print('     "sudo" runs the terminal as administrator')
+            print('     "whoami" tells you who is running the program')
             print('\n')
             print('For help on a certain command type:')
             print('help -i "command"')
@@ -289,6 +307,13 @@ while True:
             os.system("msg * " + msg)
         else:
             print("No given msg")
+
+    elif cmd == "sudo":
+        if not pyuac.isUserAdmin():
+            pyuac.runAsAdmin()
+        else:
+            print("self.admin Error:")
+            print("Program is already running as administrator")
             
     elif "shutdown" == cmd:
         print("Shuting down...")
@@ -301,6 +326,13 @@ while True:
     elif "shutdown /a" == cmd:
         print("Stoping shutdowns...")
         os.system("shutdown /a")
+
+    elif cmd == "whoami":
+        try:
+            os.system("whoami")
+        except:
+            print("self.os.whoami Error")
+            print("Whoami did not respond")
 
     elif cmd == "dir":
         active_dir = os.getcwd()
