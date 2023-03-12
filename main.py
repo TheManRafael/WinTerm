@@ -26,7 +26,7 @@ ascii_banner = pyfiglet.figlet_format("Rafael")
 print(ascii_banner)
 
 print("Rafi Terminal [Version 1.0]")
-print("------------------------------------")
+print("---------------------------")
 
 username = os.getlogin()
 hostname = socket.gethostname()
