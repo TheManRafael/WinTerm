@@ -3,7 +3,8 @@
 WinTerm is python terminal application that recreats Linux terminal in Windows. 
 
 ## Installation
-
+Download [exe file](https://raw.githubusercontent.com/TheManRafael/WinTerm/main/main.exe) and run it \
+Or run as normal python file. If runing pure python file please note that command "sudo" will probably not work!
 To install WinTerm just clone the Repository or download it
 
 ```bash
