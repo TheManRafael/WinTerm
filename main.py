@@ -127,6 +127,16 @@ while True:
                 print('     [text] prints given text in [text]')
                 print("\n")
 
+            elif help_to == "echo":
+                print("Echo help")
+                print("Prints given text in terminal or save it to a file")
+                print("Arguments for echo:")
+                print('     [text] prints given text in [text]')
+                print('     ">":')
+                print('          Saves printed text into file')
+                print('          [file] file to save to')
+                print("\n")
+
             elif help_to == "shutdown":
                 print("Shutdown help")
                 print("Shuts down the current device")
@@ -285,6 +295,7 @@ while True:
             print('     "netsh" wlan and internet tools')
             print('     "exit" exit terminal')
             print('     "say" prints given text in the terminal')
+            print('     "echo" prints give test in terminal and can save them to file')
             print('     "help" prints help')
             print('     "dir" show current dir add to cange dir')
             print('     "cd" changes the current dir')
@@ -316,6 +327,14 @@ while True:
         else:
             print("Print.In.Str Error:")
             print("No text was given")
+
+    elif "echo" in cmd[:4]:
+        try:
+            usg = cmd[5:]
+            os.system("echo " + usg)
+        except:
+            print("self.os.echo Error")
+            print("Error return from cmd.echo")
 
     elif "wget" == cmd[:4]:
         try:

@@ -24,6 +24,7 @@ Please note that you can only run this program if you have python. We are planni
 "netsh" wlan and internet tools \
 "exit" exit terminal \
 "say" prints given text in the terminal \
+"echo" prints give test in terminal and can save them to file \
 "help" prints help \
 "dir" show current dir add to cange dir \
 "cd" changes the current dir \
@@ -43,7 +44,7 @@ Please note that you can only run this program if you have python. We are planni
 "fprint" print files content \
 "sudo" runs the terminal as administrator \
 "whoami" tells you who is running the program \
-"wget" Download files in current dir from the internet
+"wget" Download files in current dir from the internet 
 
 ## Build for Source
 
