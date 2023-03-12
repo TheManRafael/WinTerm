@@ -3,7 +3,7 @@
 WinTerm is python terminal application that recreats Linux terminal in Windows. 
 
 ## Installation
-Download [exe file](https://raw.githubusercontent.com/TheManRafael/WinTerm/main/main.exe) and run it \
+Download [exe file](https://raw.githubusercontent.com/TheManRafael/WinTerm/main/WinTerm.exe) and run it \
 Or run as normal python file. If runing pure python file please note that command "sudo" will probably not work!
 To install WinTerm just clone the Repository or download it
 
@@ -47,9 +47,10 @@ Please note that you can only run this program if you have python. We are planni
 "wget" Download files in current dir from the internet \
 "rm" delete file or directories
 
-## Build for Source
-
-Download the repository or clone it.
+## Build
+Download the repository or clone it. 
+Run build.bat and the exe file will be in the dist folder \
+Or build direct form source
 
 ```bash
 git clone https://github.com/TheManRafael/WinTerm.git
@@ -64,10 +65,9 @@ Make sure you are in the folder with all the files. Then run this build command 
 ```bash
 pyinstaller --onefile main.py --add-data "C:\Users\%username%\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyfiglet;./pyfiglet"
 ```
-Now navigate into the exe build folder.
-```bash
-cd dist
-```
+Now navigate into the exe build folder and run the exe file. \
+Build Sucessfull!
+
 Now you can run the exe file. If you have any issues go an open a issue
 
 ## Contributing
