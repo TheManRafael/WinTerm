@@ -12,6 +12,12 @@ import socket, random, time
 import pyuac
 import ctypes, os
 
+def is_admin():
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except:
+        return False
+
 def progressbar(it, prefix="", size=60, out=sys.stdout): # Python3.3+
     count = len(it)
     def show(j):
@@ -39,7 +45,12 @@ os.chdir("C:\\Users\\" + username)
 while True:
     currentdir = os.getcwd()
     cmd = input(username + "@" + currentdir + "$ ")
-    if cmd == "":
+    if cmd[:4] == "sudo":
+        if not is_admin():
+            ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
+            sys.exit(0)
+    
+    elif cmd == "":
         pass
 
     elif "netsh" in cmd[:5]:
@@ -307,13 +318,6 @@ while True:
             os.system("msg * " + msg)
         else:
             print("No given msg")
-
-    elif cmd == "sudo":
-        if not pyuac.isUserAdmin():
-            pyuac.runAsAdmin()
-        else:
-            print("self.admin Error:")
-            print("Program is already running as administrator")
             
     elif "shutdown" == cmd:
         print("Shuting down...")
