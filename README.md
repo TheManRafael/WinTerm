@@ -44,7 +44,8 @@ Please note that you can only run this program if you have python. We are planni
 "fprint" print files content \
 "sudo" runs the terminal as administrator \
 "whoami" tells you who is running the program \
-"wget" Download files in current dir from the internet 
+"wget" Download files in current dir from the internet \
+"rm" delete file or directories
 
 ## Build for Source
 

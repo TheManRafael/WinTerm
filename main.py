@@ -3,7 +3,7 @@ import platform
 import socket
 import time
 import os
-os.system("title Rafi Terminal")
+os.system("title WinTerm")
 import glob
 import pyfiglet
 import sys
@@ -30,11 +30,11 @@ def progressbar(it, prefix="", size=60, out=sys.stdout): # Python3.3+
         show(i+1)
     print(flush=True, file=out)
 
-ascii_banner = pyfiglet.figlet_format("Rafael")
+ascii_banner = pyfiglet.figlet_format("WinTerm")
 print(ascii_banner)
 
-print("Rafi Terminal [Version 1.0]")
-print("---------------------------")
+print("WinTerm [Version 1.4]")
+print("---------------------")
 
 username = os.getlogin()
 hostname = socket.gethostname()
@@ -283,6 +283,18 @@ while True:
                 print("Aruments for wget:")
                 print("      [link] link to download website")
                 print("\n")
+
+            elif help_to == "rm":
+                print("rm help")
+                print("Delete file or directories")
+                print("Arguments for rm:")
+                print("      -d:")
+                print("        [dir] Directory to delete")
+                print("      -e:")
+                print("        [dir]Directory to delete files in it")
+                print("      -f:")
+                print("        [fiel] File to delete")
+                print("\n")
                 
             else:
                 print("self.tocken Error:")
@@ -316,9 +328,34 @@ while True:
             print('     "sudo" runs the terminal as administrator')
             print('     "whoami" tells you who is running the program')
             print('     "wget" Download files in current dir from the internet')
+            print('     "rm" delete file or directories')
             print('\n')
             print('For help on a certain command type:')
             print('help -i "command"')
+
+    elif "rm" in cmd[:2]:
+        arg = cmd[3:5]
+        filedir = cmd[6:]
+        if arg == "-d":
+            try:
+                os.system("rmdir " + filedir)
+            except:
+                print("self.os.rmdir Error")
+                print("Cannot delete directory. Is it correct. Is a program using it")
+        if arg == "-e":
+            try:
+                os.system("del " + filedir)
+            except:
+                print("self.os.del Error")
+                print("Cannot delete directory. Is it correct. Is a program using it")
+        if arg == "-f":
+            try:
+                os.system("del " + filedir)
+            except:
+                print("self.os.de. Error")
+                print("Cannot delete file. Is it correct. Is a program using it")
+
+
 
     elif "say" in cmd[:3]:
         if len(cmd) > 4:
