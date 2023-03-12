@@ -45,12 +45,18 @@ Please note that you can only run this program if you have python. We are planni
 
 ## Build for Source
 
-Download the repository or clone it
+Download the repository or clone it.
 
 ```bash
 git clone https://github.com/TheManRafael/WinTerm.git
 ```
-Make sure you are in the folder with all the files.
+Before you build make sure you have pyinstaller installed and other needed packages!
+
+```bash
+pip install pyinstaller
+pip install -r requirements.txt
+```
+Make sure you are in the folder with all the files. Then run this build command with pyinstaller.
 ```bash
 pyinstaller --onefile main.py --add-data "C:\Users\%username%\AppData\Local\Programs\Python\Python311\Lib\site-packages\pyfiglet;./pyfiglet"
 ```
