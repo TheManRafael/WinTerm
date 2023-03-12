@@ -130,79 +130,79 @@ while True:
             elif help_to == "shutdown":
                 print("Shutdown help")
                 print("Shuts down the current device")
-                print("Arguments for shutdown")
+                print("Arguments for shutdown:")
                 print('     "/a" will stop if a shutdown is intended')
                 print("\n")
 
             elif help_to == "restart":
                 print("Restart help")
                 print("Will restart the current device")
-                print("Arguments for restart")
+                print("Arguments for restart:")
                 print("     --none--")
                 print("\n")
 
             elif help_to == "msg":
                 print("Msg help")
                 print("Will msg to the current device")
-                print("Arguments for msg")
+                print("Arguments for msg:")
                 print("     [text] will show the given text as a messagebox")
                 print("\n")
 
             elif help_to == "vol":
                 print('Vol help')
                 print('Shows details about windows installationes HHD')
-                print('Agruments for vol')
+                print('Agruments for vol:')
                 print('     --none--')
                 print('\n')
 
             elif help_to == "help":
                 print('Help help')
                 print('Shows avalibal commands')
-                print('Arguments for Help')
+                print('Arguments for Help:')
                 print('     --none--')
                 print('\n')
 
             elif help_to == "dir":
                 print('Dir help')
                 print('Dir changes or shows cwdir')
-                print('Arguments for dir')
+                print('Arguments for dir:')
                 print('     [text] if you what to chage dir')
                 print('\n')
 
             elif help_to == "ls":
                 print("Ls help")
                 print('Ls shows all files and dir in a dir')
-                print('Arguments for ls')
+                print('Arguments for ls:')
                 print('     "-uo" shows dir content')
                 print('\n')
 
             elif help_to == "apt":
                 print('Apt help')
                 print('Apt install Apps/Programms with winget')
-                print('Arguments for apr')
+                print('Arguments for apt:')
                 print('     "-i" install package')
                 print('          [text] pakage to install')
                 print('\n')
 
             elif help_to == "chos":
                 print("Chos help")
-                print("Compars os with original from windows")
-                print("Arguments for chos")
+                print("Compares os with original windows version from windows")
+                print("Arguments for chos:")
                 print("     --none--")
                 print("\n")
 
             elif help_to == "clear":
                 print("Cls help")
                 print("Clears the current Terminalscreen")
-                print("Arguments for cls")
+                print("Arguments for cls:")
                 print("     --none--")
                 print("\n")
 
             elif help_to == "title":
                 print("Title help")
                 print("Changes the title of the Termianl Window")
-                print("Arguments for title")
-                print("     --none--")
+                print("Arguments for title:")
+                print("     [text] text to title")
                 print("\n")
 
             elif help_to == "exit":
@@ -215,56 +215,63 @@ while True:
             elif help_to == "start":
                 print("Start help")
                 print("Start will start a given Programm or address")
-                print("Arguments for start")
+                print("Arguments for start:")
                 print('     [text] program/dir/addres input')
                 print("\n")
 
             elif help_to == "cmd":
                 print("Cmd help")
                 print("Start cmd termianl or execute cmd commands")
-                print("Arguments for cmd")
+                print("Arguments for cmd:")
                 print("     [text] if you whant to execute a command in a subshell")
 
             elif help_to == "notepad":
                 print("Notepad help")
                 print("Starts notepad")
-                print("Arguments for notepad")
+                print("Arguments for notepad:")
                 print("     [text] file to start")
                 print("\n")
 
             elif help_to == "pprint":
                 print("Pprint help")
                 print("Prints a decorated text")
-                print("Arguments for pprint")
+                print("Arguments for pprint:")
                 print('     [text] to pprint')
                 print("\n")
 
             elif help_to == "fprint":
                 print("Fprint help")
                 print("Prints file content")
-                print("Arguments for fprint")
+                print("Arguments for fprint:")
                 print("     [text] file to fprint")
                 print("\n")
 
             elif help_to == "cd":
                 print("cd help")
                 print("Changes the current dir")
-                print("Arguments for cd")
+                print("Arguments for cd:")
                 print("     [dir] dir to change to")
                 print("\n")
 
             elif help_to == "sudo":
                 print("sudo help")
                 print("Run commands as administrator")
-                print("Arguments for sudo")
+                print("Arguments for sudo:")
                 print("      --none--")
                 print("\n")
 
             elif help_to == "whoami":
                 print("whoami help")
                 print("Tells you who is running the program")
-                print("Arguments for whoami")
+                print("Arguments for whoami:")
                 print("      --none--")
+                print("\n")
+
+            elif help_to == "wget":
+                print("wget help")
+                print("Download files in current dir from the internet")
+                print("Aruments for wget:")
+                print("      [link] link to download website")
                 print("\n")
                 
             else:
@@ -297,6 +304,7 @@ while True:
             print('     "fprint" print files content')
             print('     "sudo" runs the terminal as administrator')
             print('     "whoami" tells you who is running the program')
+            print('     "wget" Download files in current dir from the internet')
             print('\n')
             print('For help on a certain command type:')
             print('help -i "command"')
@@ -308,6 +316,14 @@ while True:
         else:
             print("Print.In.Str Error:")
             print("No text was given")
+
+    elif "wget" == cmd[:4]:
+        try:
+            link = cmd[5:]
+            os.system("powershell wget " + link)
+        except:
+            print("self.powershell.wget Error:")
+            print("Url was probably not correct")
 
     elif "vol" == cmd:
         os.system("vol")

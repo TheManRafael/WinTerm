@@ -42,7 +42,8 @@ Please note that you can only run this program if you have python. We are planni
 "pprint" makes a decorated print \
 "fprint" print files content \
 "sudo" runs the terminal as administrator \
-"whoami" tells you who is running the program
+"whoami" tells you who is running the program \
+"wget" Download files in current dir from the internet
 
 ## Build for Source
 
