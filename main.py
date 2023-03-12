@@ -25,7 +25,7 @@ def progressbar(it, prefix="", size=60, out=sys.stdout): # Python3.3+
 ascii_banner = pyfiglet.figlet_format("Rafael")
 print(ascii_banner)
 
-print("Rafi Hacker Terminal [Version 1.0]")
+print("Rafi Terminal [Version 1.0]")
 print("------------------------------------")
 
 username = os.getlogin()
