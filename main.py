@@ -61,15 +61,17 @@ while True:
 
         elif arg == "-show":
             usg = cmd[12:15]
-            print(usg)
             if usg == "-an":
                 print("Avalibal Networks:")
                 os.system("netsh wlan show network")
 
-            elif usg == "-ps":
+            elif usg == "-np":
                 os.system("netsh wlan show profiles")
                 pssrd = input("Wlan: ")
-                os.system("netsh wlan show profile " + pssrd + " key=clear")
+                os.system('netsh wlan show profile "' + pssrd + '" key=clear')
+            else:
+                print("self.args Error")
+                print("No give argument. See help -i netsh for args")
 
         elif arg == "-ddos":
             try:
@@ -113,7 +115,7 @@ while True:
                 print('          Shows sertain thing more in usg')
                 print('          Usage:')
                 print('               "-an" to show avalibal networks')
-                print('               "-os" show known password of a give network')
+                print('               "-np" show known password of a give network')
                 print('\n')
                 print('     "-ddos":')
                 print('          Sends very much data packges and can make a server/network offline')
@@ -308,7 +310,6 @@ while True:
             print('     "exit" exit terminal')
             print('     "say" prints given text in the terminal')
             print('     "echo" prints give test in terminal and can save them to file')
-            print('     "help" prints help')
             print('     "dir" show current dir add to cange dir')
             print('     "cd" changes the current dir')
             print('     "ls" show files and dir in a dir')
